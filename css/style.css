@@ -110,7 +110,7 @@ nav ul li {
   padding-left: 10px;
 }
 
-.caja-article {
+.container-article {
   width: 50vw;
   height: auto;
   background-color: white;
@@ -118,13 +118,44 @@ nav ul li {
   grid-area: article;
   align-items: baseline;
   justify-content: center;
+  grid-template-areas: "caja-bienvenida" "section";
+}
+
+.caja-bienvenida {
+  display: grid;
+  grid-area: caja-bienvenida;
+  width: 50vw;
+}
+
+.container-section {
+  display: grid;
+  grid-area: section;
+  width: 50vw;
+  grid-template-areas: "parrafo-1" "foto-parrilla";
+}
+.container-section img {
+  width: 50vw;
+  height: auto;
+}
+
+#parrafo-1 {
+  display: grid;
+  width: 50vw;
+  grid-area: parrafo-1;
+}
+
+#foto-parrilla {
+  display: grid;
+  width: 50vw;
+  height: auto;
+  grid-area: foto-parrilla;
 }
 
 #bienvenida {
   color: #e10600;
   font-size: 2em;
   font-family: "F1textos";
-  width: auto;
+  width: 50vw;
   height: auto;
   padding-left: 10px;
 }
@@ -211,7 +242,7 @@ footer {
 }
 
 .caja-pie-de-pagina {
-  width: 100vw;
+  width: 75vw;
   height: auto;
   background-color: #e10600;
   grid-area: footer;
@@ -1150,23 +1181,6 @@ footer {
 }
 
 @media (max-width: 992px) {
-  header img {
-    width: 100vw;
-  }
-  .navbar {
-    display: none !important;
-  }
-  .caja-body {
-    display: grid;
-    grid-template-areas: "header" "article" "aside" "footer";
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto;
-    row-gap: 5px;
-  }
-  .caja-imagen-GP {
-    display: grid;
-    justify-content: center;
-  }
   .navbar-mobile-container {
     display: block;
     position: absolute;
@@ -1174,8 +1188,8 @@ footer {
     left: 0px;
   }
   .navbar-mobile-container img {
-    width: 15px;
-    height: 15px;
+    width: 5vw;
+    height: 5vw;
     margin-left: 10px;
     margin-top: 10px;
   }
@@ -1195,13 +1209,94 @@ footer {
   .navbar-mobile li {
     font-size: 14px;
   }
-  .caja-titulo-general img {
+  .navbar {
+    display: none !important;
+  }
+  header img {
     width: 100vw;
+  }
+  .caja-titulo-header {
+    display: grid;
+    width: 100vw;
+  }
+  .imagen-banner {
+    width: 100vw;
+  }
+  .container-body-inicio {
+    width: 100vw;
+  }
+  .caja-body {
+    display: grid;
+    grid-template-areas: "header" "article" "aside" "footer";
+    grid-template-columns: 100vw;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 5px;
+    width: 100vw;
+  }
+  .container-article {
+    display: grid;
+    width: 100vw;
+    grid-area: article;
+    grid-template-areas: "caja-bienvenida" "section";
+  }
+  .caja-bienvenida {
+    display: grid;
+    width: 100vw;
+    grid-area: caja-bienvenida;
+  }
+  #bienvenida {
+    display: grid;
+    width: 100vw;
+  }
+  .container-section {
+    display: grid;
+    grid-area: section;
+  }
+  .container-section img {
+    width: 100vw;
+    height: auto;
+  }
+  .caja-aside {
+    display: grid;
+    width: 100vw;
+    grid-area: aside;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "caja-proximo-GP" "caja-imagen-GP" "caja-titulo-GP" "caja-titulo-GP" "caja-horarios";
+  }
+  .caja-proximo-GP {
+    display: grid;
+    width: 100vw;
+    grid-area: caja-proximo-GP;
+    justify-content: center;
+  }
+  .caja-imagen-GP {
+    display: grid;
+    justify-content: center;
+    width: 100vw;
+    grid-area: caja-imagen-GP;
+    height: auto;
+  }
+  .caja-imagen-GP img {
+    width: 100vw;
+    height: auto;
+  }
+  .caja-titulo-GP {
+    display: grid;
+    width: 100vw;
+    grid-area: caja-titulo-GP;
+    justify-content: center;
+  }
+  .caja-horarios {
+    display: grid;
+    width: 100vw;
+    grid-area: caja-horarios;
+    justify-content: center;
   }
   .container-body-circuitos {
     width: 100vw;
     display: grid;
-    grid-template-areas: "headerok" "caja-aside-grilla-circuitos" "footer";
+    grid-template-areas: "header" "caja-aside-grilla-circuitos" "footer";
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
     row-gap: 5px;
@@ -1426,12 +1521,12 @@ footer {
     padding-top: 45px;
     padding-bottom: 40px;
   }
-  .footer {
+  .caja-pie-de-pagina {
     display: grid;
     grid-area: footer;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: auto;
   }
   .container-body-comunidad {
     width: 100vw;
@@ -1439,8 +1534,8 @@ footer {
     grid-template-areas: "header" "container-comunidad" "footer";
   }
   .container-redes-sociales {
-    display: flex;
-    flex-flow: column nowrap;
+    display: grid;
+    grid-template-areas: "firma" "instagram" "comunidad" "reddit" "copy" "f1";
     align-items: center;
     justify-content: center;
     width: 100vw;
@@ -1509,6 +1604,9 @@ footer {
   }
   .tabla-mundial-de-pilotos {
     width: 100vw;
+  }
+  footer {
+    width: auto;
   }
 }
 

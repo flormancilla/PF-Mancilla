@@ -18,9 +18,11 @@
     font-family: "F1rookies";
     src: url(../assets/fonts/Rookies.ttf);
 }
+
 .container {
     max-width: 100% !important;
 }
+
 /* INICIO */
 .container-body-inicio {
     border-top: 0px;
@@ -118,7 +120,7 @@ nav {
     padding-left: 10px;
 }
 
-.caja-article {
+.container-article {
     width: 50vw;
     height: auto;
     background-color: white;
@@ -126,13 +128,49 @@ nav {
     grid-area: article;
     align-items: baseline;
     justify-content: center;
+    grid-template-areas:
+    "caja-bienvenida"
+    "section";
+}
+
+.caja-bienvenida {
+    display: grid;
+    grid-area: caja-bienvenida;
+    width: 50vw;
+}
+
+.container-section {
+    display: grid;
+    grid-area: section;
+    width: 50vw;
+    grid-template-areas:
+    "parrafo-1"
+    "foto-parrilla";
+
+    img {
+        width: 50vw;
+        height: auto;
+    }
+}
+
+#parrafo-1 {
+    display: grid;
+    width: 50vw;
+    grid-area: parrafo-1;
+}
+
+#foto-parrilla {
+    display: grid;
+    width: 50vw;
+    height: auto;
+    grid-area: foto-parrilla;
 }
 
 #bienvenida {
     color: #e10600;
     font-size: 2em;
     font-family: "F1textos";
-    width: auto;
+    width: 50vw;
     height: auto;
     padding-left: 10px;
 }
@@ -172,6 +210,7 @@ nav {
     width: 25vw;
     height: auto;
     display: grid;
+
     img {
         width: 25vw;
         height: auto;
@@ -219,7 +258,7 @@ footer {
 }
 
 .caja-pie-de-pagina {
-    width: 100vw;
+    width: 75vw;
     height: auto;
     background-color: #e10600;
     grid-area: footer;
@@ -264,7 +303,7 @@ footer {
         "firma instagram"
         "comunidad reddit"
         "copy f1";
-        width: 75vw;
+    width: 75vw;
 }
 
 /* PILOTOS */
@@ -628,7 +667,6 @@ footer {
 #footer-grilla {
     background-color: #e10600;
     width: 100%;
-
 }
 
 /* CIRCUITOS */
@@ -925,8 +963,8 @@ footer {
     grid-area: tabla-mundial-de-constructores;
     width: 100%;
     grid-template-areas:
-    "titulo-mundial-de-constructores"
-    "tabla-general-de-constructores";
+        "titulo-mundial-de-constructores"
+        "tabla-general-de-constructores";
     grid-template-columns: auto;
     grid-template-rows: auto 95%;
 }
@@ -1233,33 +1271,6 @@ footer {
 }
 
 @media (max-width: 992px) {
-    header {
-        img {
-            width: 100vw;
-        }
-    }
-
-    .navbar {
-        display: none !important;
-    }
-
-    .caja-body {
-        display: grid;
-        grid-template-areas:
-            "header"
-            "article"
-            "aside"
-            "footer";
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto;
-        row-gap: 5px;
-    }
-
-    .caja-imagen-GP {
-        display: grid;
-        justify-content: center;
-    }
-
     .navbar-mobile-container {
         display: block;
         position: absolute;
@@ -1267,8 +1278,8 @@ footer {
         left: 0px;
 
         img {
-            width: 15px;
-            height: 15px;
+            width: 5vw;
+            height: 5vw;
             margin-left: 10px;
             margin-top: 10px;
         }
@@ -1293,17 +1304,122 @@ footer {
         }
     }
 
-    .caja-titulo-general {
+    .navbar {
+        display: none !important;
+    }
+
+    header {
         img {
             width: 100vw;
         }
+    }
+
+    .caja-titulo-header {
+        display: grid;
+        width: 100vw;
+    }
+
+    .imagen-banner {
+        width: 100vw;
+    }
+    .container-body-inicio {
+        width: 100vw;
+    }
+    .caja-body {
+        display: grid;
+        grid-template-areas:
+            "header"
+            "article"
+            "aside"
+            "footer";
+        grid-template-columns: 100vw;
+        grid-template-rows: auto auto auto auto;
+        row-gap: 5px;
+        width: 100vw;
+    }
+
+    .container-article {
+        display: grid;
+        width: 100vw;
+        grid-area: article;
+        grid-template-areas:
+        "caja-bienvenida"
+        "section";
+    }
+
+    .caja-bienvenida {
+        display: grid;
+        width: 100vw;
+        grid-area: caja-bienvenida;
+    }
+
+    #bienvenida {
+        display: grid;
+        width: 100vw;
+    }
+    .container-section {
+        display: grid;
+        grid-area: section;
+
+        img {
+            width: 100vw;
+            height: auto;
+        }
+    }
+
+    .caja-aside {
+        display: grid;
+        width: 100vw;
+        grid-area: aside;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+            "caja-proximo-GP"
+            "caja-imagen-GP"
+            "caja-titulo-GP"
+            "caja-titulo-GP"
+            "caja-horarios";
+    }
+
+    .caja-proximo-GP {
+        display: grid;
+        width: 100vw;
+        grid-area: caja-proximo-GP;
+        justify-content: center;
+    }
+
+    .caja-imagen-GP {
+        display: grid;
+        justify-content: center;
+        width: 100vw;
+        grid-area: caja-imagen-GP;
+        height: auto;
+
+        img {
+            width: 100vw;
+            height: auto;
+        }
+    }
+
+    .caja-titulo-GP {
+        display: grid;
+        width: 100vw;
+        grid-area: caja-titulo-GP;
+        justify-content: center;
+    }
+
+    .caja-horarios {
+        display: grid;
+        width: 100vw;
+        grid-area: caja-horarios;
+        justify-content: center;
     }
 
     .container-body-circuitos {
         width: 100vw;
         display: grid;
         grid-template-areas:
-            "headerok"
+            "header"
             "caja-aside-grilla-circuitos"
             "footer";
         grid-template-columns: auto;
@@ -1318,9 +1434,9 @@ footer {
         grid-template-areas:
             "titulo-grilla-circuitos"
             "lista-circuitos";
-            grid-template-columns: auto;
-            justify-content: center;
-            align-items: center;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
         grid-template-columns: auto;
         grid-template-rows: auto auto;
     }
@@ -1378,6 +1494,7 @@ footer {
         display: grid;
         grid-area: tituloGrillaPilotos;
     }
+
     .h1tituloGrillaPilotos {
         font-size: 25px;
         justify-content: center;
@@ -1389,8 +1506,8 @@ footer {
         grid-template-areas:
             "tituloGrillaPilotos"
             "lista-de-pilotos";
-            justify-content: center;
-            align-items: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .lista-de-pilotos {
@@ -1478,7 +1595,7 @@ footer {
         padding-bottom: 40px;
     }
 
-    #russell  {
+    #russell {
         width: 80vw;
         height: 50vw;
         padding-left: 40px;
@@ -1486,7 +1603,7 @@ footer {
         padding-bottom: 40px;
     }
 
-    #sainz  {
+    #sainz {
         width: 80vw;
         height: 50vw;
         padding-left: 40px;
@@ -1494,7 +1611,7 @@ footer {
         padding-bottom: 40px;
     }
 
-    #hamilton  {
+    #hamilton {
         width: 80vw;
         height: 50vw;
         padding-left: 40px;
@@ -1614,12 +1731,12 @@ footer {
         padding-bottom: 40px;
     }
 
-    .footer {
+    .caja-pie-de-pagina {
         display: grid;
         grid-area: footer;
         align-items: center;
         justify-content: center;
-        width: 100vw;
+        width: auto;
     }
 
     .container-body-comunidad {
@@ -1632,14 +1749,21 @@ footer {
     }
 
     .container-redes-sociales {
-        display: flex;
-        flex-flow: column nowrap;
+        display: grid;
+        grid-template-areas:
+        "firma"
+        "instagram"
+        "comunidad"
+        "reddit"
+        "copy"
+        "f1";
         align-items: center;
         justify-content: center;
         width: 100vw;
         background-color: #e10600;
     }
-    .container-comunidad                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {
+
+    .container-comunidad {
         display: grid;
         grid-area: container-comunidad;
         width: 100vw;
@@ -1682,22 +1806,24 @@ footer {
         display: grid;
         width: 100vw;
         grid-area: redes;
-        grid-template-areas:
-            "container-twitter container-reddit";
+        grid-template-areas: "container-twitter container-reddit";
         grid-template-columns: 50% 50%;
     }
+
     .container-twitter {
         display: grid;
         grid-area: container-twitter;
         justify-content: center;
         width: auto;
     }
+
     .container-reddit {
         display: grid;
         grid-area: container-reddit;
         justify-content: center;
         width: auto;
     }
+
     .reddit-preview {
         display: grid;
         grid-area: reddit-preview;
@@ -1709,9 +1835,9 @@ footer {
         display: grid;
         width: 100vw;
         grid-template-areas:
-        "header"
-        "container-tabla-posiciones"
-        "footer";
+            "header"
+            "container-tabla-posiciones"
+            "footer";
     }
 
     .container-tabla-posiciones {
@@ -1719,12 +1845,17 @@ footer {
         width: 100vw;
         grid-area: container-tabla-posiciones;
         grid-template-areas:
-        "tituloPosiciones"
-        "tabla-mundial-de-pilotos"
-        "tabla-mundial-de-constructores";
+            "tituloPosiciones"
+            "tabla-mundial-de-pilotos"
+            "tabla-mundial-de-constructores";
         grid-template-columns: auto;
     }
+
     .tabla-mundial-de-pilotos {
         width: 100vw;
+    }
+
+    footer {
+        width: auto;
     }
 }
